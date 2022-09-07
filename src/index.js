@@ -4,15 +4,16 @@
  */
 import app from './app.js';
 import { sequelize } from './database/database.js';
-import './models/Products.js';
 
 async function main() {
   // ? Prueba la conexion con la base de datos
   try {
+    /*
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
+    */
     // ~ Sincronizando las tablas y elementos de la base de datos
-    await sequelize.sync();
+    await sequelize.sync({force: false});
     // * Server escuchando en el puerto 3000
     app.listen(3000);
     console.log('Server is listening on port', 3000);

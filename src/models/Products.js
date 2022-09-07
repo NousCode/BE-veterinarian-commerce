@@ -6,11 +6,11 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../database/database.js';
 
 //* Creando una tabla
-export const Products = sequelize.define('products', {
+export const Product = sequelize.define('products', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncremeent: true,
+    autoIncrement: true,
   },
   name: {
     type: DataTypes.STRING
@@ -19,7 +19,7 @@ export const Products = sequelize.define('products', {
     type: DataTypes.INTEGER
   },
   store: {
-    type: DataTypes.CHAR
+    type: DataTypes.STRING(30)
   },
   warehouse: {
     type: DataTypes.BOOLEAN,
