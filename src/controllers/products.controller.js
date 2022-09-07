@@ -16,8 +16,10 @@ export const getAllProducts = async (req, res) => {
 export const getAProduct = async (req, res) => {
   //! Si sucede algun error, retornar mensaje a cliente.
   try {
+
     //Extraer el id del parametro
     const { id } = req.params;
+
     // Busqueda del producto por id.
     const product = await Product.findOne({
       where: {
@@ -27,8 +29,10 @@ export const getAProduct = async (req, res) => {
 
     if (!product)
       return res.status(404).json({ message: 'Product does not exists.' });
+
     // respuesta
     res.json(product);
+
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -37,6 +41,7 @@ export const getAProduct = async (req, res) => {
 export const createProduct = async (req, res) => {
   //! Si sucede algun error, retornar mensaje a cliente.
   try {
+
     // Cogiendo la información en el body.
     const { name, quantity, store, warehouse } = req.body;
 
@@ -47,8 +52,11 @@ export const createProduct = async (req, res) => {
       store,
       warehouse,
     });
+
     res.json(newProduct);
+
   } catch (error) {
+
     return res.status(500).json({ message: error.message });
   }
 };
@@ -56,8 +64,10 @@ export const createProduct = async (req, res) => {
 export const updateProduct = async (req, res) => {
   //! Si sucede algun error, retornar mensaje a cliente.
   try {
+
     //Extraer el id del parametro
     const { id } = req.params;
+
     // Cogiendo la información en el body.
     const { name, quantity, store, warehouse } = req.body;
 
@@ -81,6 +91,7 @@ export const updateProduct = async (req, res) => {
     // respuesta
     res.status(200).json(product);
   } catch (error) {
+
     return res.status(500).json({ message: error.message });
   }
 };
@@ -88,17 +99,21 @@ export const updateProduct = async (req, res) => {
 export const deleteProduct = async (req, res) => {
   //! Si sucede algun error, retornar mensaje a cliente.
   try {
+
     //Extraer el id del parametro
     const { id } = req.params;
+
     //Eliminar por el id del producto
     await Product.destroy({
       where: {
         id,
       },
     });
+
     // respuesta
     res.sendStatus(204);
   } catch (error) {
+    
     return res.status(500).json({ message: error.message });
   }
 };

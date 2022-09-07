@@ -1,5 +1,5 @@
 version: '3.9'
-
+# Levantando los servicios de compose.
 services:
   postgres:
     image: postgres:latest
