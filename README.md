@@ -47,20 +47,20 @@ Docker provides a different way to use databases without install any DB environm
 ## Endpoints Created - Queries
 1. API 
     ```sh
-    http://localhost:3000
+    http://localhost:4000
     ```
 2. Products
    * Get all Products:
         ```sh
-        GET http://localhost:3000/products
+        GET http://localhost:4000/products
         ```
    * Get a product by id
         ```sh
-        GET http://localhost:3000/products/${id}
+        GET http://localhost:4000/products/${id}
         ```
     * Add bot
         ```sh
-        POST http://localhost:3000/products
+        POST http://localhost:4000/products
         Content-Type: application/json
 
         {
@@ -72,7 +72,7 @@ Docker provides a different way to use databases without install any DB environm
         ```
     * Modify a product by id
         ```sh
-        PUT http://localhost:3000/products/${id}
+        PUT http://localhost:4000/products/${id}
 
         Content-Type: application/json
         
@@ -86,7 +86,7 @@ Docker provides a different way to use databases without install any DB environm
         ```
     * Delete a product by id
         ```sh
-        DELETE http://localhost:3000/products/${id}
+        DELETE http://localhost:4000/products/${id}
         ```
 ## Data Modeling
 ![Modelo de datos](./public/img/DiagramaF%C3%ADsico.png)

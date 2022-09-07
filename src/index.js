@@ -15,10 +15,10 @@ async function main() {
 
     // ~ Sincronizando las tablas y elementos de la base de datos
     await sequelize.sync({force: false});
-    
-    // * Server escuchando en el puerto 3000
-    app.listen(3000);
-    console.log('Server is listening on port', 3000);
+
+    // * Server escuchando en el puerto 4000
+    app.listen(4000);
+    console.log('Server is listening on port', 4000);
 
   } catch (error) {
     console.error('Unable to connect to the database:', error);
